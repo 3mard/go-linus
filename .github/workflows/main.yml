@@ -5,11 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     name: linus pull request review
     steps:
-    - name: Hello world action step
+    - name: Review PR
       id: hello
       uses: 3mard/go-linus
       with:
         who-to-greet: 'Linus'
-    # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
