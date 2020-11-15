@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   go-linus:
@@ -8,9 +8,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Review PR
-      id: hello
+      id: linus_review
       uses: ./
-      with:
-        who-to-greet: 'Linus'
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name : get output
+      run: echo "PR message is ${{ steps.linus_review.outputs.review}}"
