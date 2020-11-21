@@ -10,5 +10,9 @@ jobs:
     - name: Review PR
       id: linus_review
       uses: ./
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          prNumber: ${{github.repository}}
+
     - name : get output
       run: echo "PR message is ${{ steps.linus_review.outputs.review}}"
