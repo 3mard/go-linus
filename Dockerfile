@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM golang:alpine
+FROM golang:latest
 
 WORKDIR $GOPATH/src/github.com/3mard/go-linus
 
