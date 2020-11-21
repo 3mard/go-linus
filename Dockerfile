@@ -5,6 +5,7 @@ WORKDIR $GOPATH/src/github.com/3mard/go-linus
 
 COPY ./ ./
 
+RUN go get -v ./...
 
 RUN go install -v ./...
 
