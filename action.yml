@@ -11,10 +11,18 @@ inputs:
   prNumber:
     required: true
     description: "the pr number"
+  owner:
+    required: true
+    description: owner
+  repo: 
+    required: true
+    description: repo
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{inputs.token}}
+    - ${{inputs.owner}}
+    - ${{inputs.repo}}
     - ${{inputs.prNumber}}
 

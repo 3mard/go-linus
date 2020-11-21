@@ -12,7 +12,9 @@ jobs:
       uses: ./
       with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          prNumber: ${{github.repository}}
+          repo: ${{github.repository}}
+          owner: ${{github.repository_owner}}
+          prNumber: ${{github.event.number}}
 
     - name : get output
       run: echo "PR message is ${{ steps.linus_review.outputs.review}}"
