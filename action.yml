@@ -4,6 +4,25 @@ description: 'Review you PR like a linus'
 outputs:
   review: # id of output
     description: 'The time we greeted you'
+inputs:
+  token:
+    description: "github token"
+    required: true
+  prNumber:
+    required: true
+    description: "the pr number"
+  owner:
+    required: true
+    description: owner
+  repo: 
+    required: true
+    description: repo
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{inputs.token}}
+    - ${{inputs.owner}}
+    - ${{inputs.repo}}
+    - ${{inputs.prNumber}}
+
